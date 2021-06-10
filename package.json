@@ -1,0 +1,38 @@
+{
+	"name": "cypress",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test:chrome": "cypress run --browser chrome --env environment=dev",
+		"debug:chrome": "cypress run --browser chrome --env environment=dev",
+		"combine-reports": "./node_modules/mochawesome-merge/bin/mochawesome-merge.js ./cypress/reports/mocha/*.json > ./cypress/reports/mocha/report.json",
+		"generate-report": "./node_modules/mochawesome-report-generator/bin/cli.js ./cypress/reports/mocha/report.json -f report --code false --charts true -o ./cypress/reports/last",
+		"posttest": "npm run combine-reports && npm run generate-report"
+	},
+	"author": "Pecode",
+	"license": "General",
+	"devDependencies": {
+		"@4tw/cypress-drag-drop": "^1.6.0",
+		"chai": "^4.3.4",
+		"cypress": "^5.2.0",
+		"cypress-downloadfile": "^1.2.0",
+		"cypress-file-upload": "^5.0.6",
+		"cypress-fill-command": "^1.0.2",
+		"cypress-iframe": "^1.0.1",
+		"cypress-multi-reporters": "^1.2.3",
+		"cypress-real-events": "^1.3.0",
+		"cypress-wait-until": "^1.7.1",
+		"cypress-xpath": "^1.6.2",
+		"dayjs": "^1.10.4",
+		"globby": "^11.0.3",
+		"happo-cypress": "^1.20.0",
+		"happo.io": "^6.4.0",
+		"mocha": "^5.2.0",
+		"mocha-junit-reporter": "^1.23.3",
+		"mochawesome": "^4.1.0",
+		"mochawesome-merge": "^4.0.2",
+		"mochawesome-report-generator": "^4.1.0",
+		"node-xlsx": "^0.16.1"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"baseUrl": "https://test.mapwellbeing.com/",
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"defaultCommandTimeout": 25000,
+	"responseTimeout" : 20000,
+	"taskTimeout": 50000,
+	"reporter": "cypress-multi-reporters",
+	"chromeWebSecurity": false,
+	"pageLoadTimeout": 40000,
+	"trashAssetsBeforeRuns":false,
+	"video": false,
+	
+	"reporterOptions": {
+		"reporterEnabled": "mochawesome",
+		"mochawesomeReporterOptions": {
+			"reportDir": "cypress/reports/mocha",
+			"quite": true,
+			"overwrite": true,
+			"html": true,
+			"json": false,
+			"video": true
+		}
+	}
+}
