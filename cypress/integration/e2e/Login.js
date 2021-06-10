@@ -4,7 +4,7 @@ const lg = new Login;
 let envVariables = Cypress.env();
 
 
-describe('Test', () => {
+describe('Testing Login Page', () => {
     before(() => {
        ex()
     })   
@@ -17,7 +17,7 @@ describe('Test', () => {
         elements()
     });
 
-    it.skip('Login Successful', () => {
+    it.only('Login Successful', () => {
         successfullogin()
     });
 

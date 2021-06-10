@@ -27,6 +27,8 @@ export function successfullogin(user = envVariables.dev.user.first_user, passwor
     emailField(user)
     passwordField(password)
     loginBtn()
+    cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
+    lgn.cartBtn().should('be.visible')
 }
 
 export function invalidLogin() {

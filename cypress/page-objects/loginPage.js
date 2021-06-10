@@ -32,4 +32,8 @@ export default class Login {
     closeErrorBtn(){
         return cy.get('.svg-inline--fa fa-times fa-w-11 ')
     }
+
+    cartBtn(){
+        return cy.get('.shopping_cart_link')
+    }
 }
