@@ -2,10 +2,10 @@ import Products from '../page-objects/productsPageObjects'
 import { ex } from './login';
 const prod = new Products();
 
-
 const verifyAllImage = (text) => prod.prodImage(text).should('be.visible'); 
 
 export function images(){ 
+    cy.url().should('include', 'https://www.saucedemo.com/inventory.html')
     verifyAllImage('Sauce Labs Backpack')
     verifyAllImage('Sauce Labs Bike Light')
     verifyAllImage('Sauce Labs Bolt T-Shirt')
@@ -14,12 +14,19 @@ export function images(){
     verifyAllImage('Test.allTheThings() T-Shirt (Red)')
 }
 
-export function addingToCart(){
-    prod.addToCartBtn1().should('be.be.enabled').click()
-    prod.cartBtn().click()
-    cy.url().should('eq', 'https://www.saucedemo.com/cart.html')
-    prod.productInCart().should('be.visible')
+// export function addingToCart(){
+//     prod.addToCartBtn1().should('be.be.enabled').click()
+//     prod.cartBtn().click()
+//     cy.url().should('eq', 'https://www.saucedemo.com/cart.html')
+//     prod.productInCart().should('be.visible')
 
+// }
+
+export function addAllToCart(element) {
+    for (let i = 0; i < element.length; i++) {
+        cy.get(element[i]).should('exist').click()
+    }
+    
 }
 
 export function example(element, prices) {
@@ -32,10 +39,3 @@ export function result(element, prices) {
     }
 }
 
-
-
-
-
-// possible to add a product to Caret
-// added product is displayed in cart
-// possible to delete from cart

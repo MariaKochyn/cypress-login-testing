@@ -24,28 +24,15 @@ export default class Products {
         return cy.xpath(`//img[@alt='${text}']`)
     }
 
-    addToCartBtn1(){
-        return cy.get('#add-to-cart-sauce-labs-backpack')
-    }
-
-    addToCartBtn2(){
-        return cy.get('#add-to-cart-sauce-labs-bike-light')
-    }
-
-    addToCartBtn3(){
-        return cy.get('#add-to-cart-sauce-labs-bolt-t-shirt')
-    }
-
-    addToCartBtn4(){
-        return cy.get('#add-to-cart-sauce-labs-fleece-jacket')
-    }
-
-    addToCartBtn5(){
-        return cy.get('#add-to-cart-sauce-labs-onesie')
-    }
-
-    addToCartBtn6(){
-        return cy.get('#add-to-cart-test.allthethings()-t-shirt-(red)')
+    addToCartBtn(){
+        return [
+            "#add-to-cart-sauce-labs-backpack",
+            "#add-to-cart-sauce-labs-bike-light",
+            "#add-to-cart-sauce-labs-bolt-t-shirt",
+            "#add-to-cart-sauce-labs-fleece-jacket",
+            "#add-to-cart-sauce-labs-onesie",
+            "button[id='add-to-cart-test.allthethings()-t-shirt-(red)']"
+        ]
     }
 
     productInCart(){
@@ -74,6 +61,17 @@ export default class Products {
         ]
     }
 
+    elementsInCart() {
+        return [
+            "body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)",
+            "div:nth-child(4)",
+            "div:nth-child(5)",
+            "div:nth-child(6)",
+            "div:nth-child(7)",
+            "div:nth-child(8)"
+        ]
+    }
+
     removeFromCartBtn() {
         return [
             "remove-sauce-labs-backpack",
@@ -85,4 +83,6 @@ export default class Products {
 
         ]
     }
+
+
 }
