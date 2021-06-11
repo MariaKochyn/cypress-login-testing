@@ -72,17 +72,15 @@ export default class Products {
         ]
     }
 
-    removeFromCartBtn() {
+    removeProdBtn() {
         return [
-            "remove-sauce-labs-backpack",
-            "remove-sauce-labs-bike-light",
-            "remove-sauce-labs-bolt-t-shirt",
-            "remove-sauce-labs-fleece-jacket",
-            "remove-sauce-labs-onesie",
-            "remove-test.allthethings()-t-shirt-(red)"
+            "#remove-sauce-labs-backpack",
+            "#remove-sauce-labs-bike-light",
+            "#remove-sauce-labs-bolt-t-shirt",
+            "#remove-sauce-labs-fleece-jacket",
+            "#remove-sauce-labs-onesie",
+            "button[id='remove-test.allthethings()-t-shirt-(red)']"
 
         ]
     }
-
-
 }

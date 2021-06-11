@@ -14,21 +14,6 @@ export function images(){
     verifyAllImage('Test.allTheThings() T-Shirt (Red)')
 }
 
-// export function addingToCart(){
-//     prod.addToCartBtn1().should('be.be.enabled').click()
-//     prod.cartBtn().click()
-//     cy.url().should('eq', 'https://www.saucedemo.com/cart.html')
-//     prod.productInCart().should('be.visible')
-
-// }
-
-export function addAllToCart(element) {
-    for (let i = 0; i < element.length; i++) {
-        cy.get(element[i]).should('exist').click()
-    }
-    
-}
-
 export function example(element, prices) {
     cy.get(element).should('exist').and('have.text', prices);
 }
@@ -38,4 +23,19 @@ export function result(element, prices) {
         example(element[i], prices[i])
     }
 }
+
+export function addAllToCart(element) {
+    for (let i = 0; i < element.length; i++) {
+        cy.get(element[i]).should('exist').click()
+    }   
+}
+
+export function removeAllFromCart(element) {  
+    for (let i = 0; i < element.length; i++) {
+    cy.get(element[i]).should('exist').click()
+}
+
+}
+
+
 
