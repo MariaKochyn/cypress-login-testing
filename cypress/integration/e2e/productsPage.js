@@ -1,14 +1,15 @@
 import { successfullogin, ex } from "../../models/login"
-import {images, example, result, addingToCart, addAllToCart, removeAllFromCart} from '../../models/products'
+import {images, example, result, addingToCart, addAllToCart, removeAllFromCart, removeItemFromCart, successfulOrder} from '../../models/products'
 import Products from '../../page-objects/productsPageObjects'
 const prod = new Products();
 
 describe('Testing Login Page', () => {
-    before(() => {
-       ex()
+    it('Login', () => {
+        ex()
        successfullogin()
-    }) 
+       Cypress.Cookies.preserveOnce('standard_user')
 
+    });
     it('Verify images to be visible', () => {
         images()
     });
@@ -23,6 +24,16 @@ describe('Testing Login Page', () => {
 
     it('Remove all from cart', () => {
         removeAllFromCart(prod.removeProdBtn())
+    });
+
+    it('Remove one from cart page', () => {
+        removeItemFromCart()
+    });
+    
+    it.only('Order', () => {
+        ex()
+        successfullogin()
+        successfulOrder()
     });
 
 

@@ -35,10 +35,6 @@ export default class Products {
         ]
     }
 
-    productInCart(){
-        return cy.get('.cart_item')
-    }
-
     elements() {
         return [
             "div[class='inventory_list'] div:nth-child(1) div:nth-child(2) div:nth-child(2) div:nth-child(1)",
@@ -82,5 +78,45 @@ export default class Products {
             "button[id='remove-test.allthethings()-t-shirt-(red)']"
 
         ]
+    }
+
+    cartItem() {
+        return cy.get('.cart_item')
+    }
+
+    checkoutBtn() {
+        return cy.get('#checkout')
+    }
+
+    checkoutForm() {
+        return cy.get('.checkout_info')
+    }
+
+    firstNameField() {
+        return cy.get('#first-name')
+    }
+
+    lastNameField() {
+        return cy.get('#last-name')
+    }
+
+    zipCodeField() {
+        return cy.get('#postal-code')
+    }
+
+    continueBtn() {
+        return cy.get('#continue')
+    }
+
+    finishBtn() {
+        return cy.get('#finish')
+    }
+
+    thankYouMessage() {
+        return cy.get('.complete-header')
+    }
+
+    backHomeBtn() {
+        return cy.get('#back-to-products')
     }
 }
