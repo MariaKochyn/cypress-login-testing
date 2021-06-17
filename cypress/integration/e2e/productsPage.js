@@ -30,7 +30,7 @@ describe('Testing Login Page', () => {
         removeItemFromCart()
     });
     
-    it.only('Order', () => {
+    it('Order', () => {
         ex()
         successfullogin()
         successfulOrder()
